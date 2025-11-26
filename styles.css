@@ -1,0 +1,245 @@
+/* --- Reset e Variáveis --- */
+:root {
+    --bg-color: #1e1e1e; /* Fundo escuro IDE */
+    --card-bg: #252526;
+    --primary-color: #007acc; /* Azul VS Code */
+    --accent-color: #c586c0; /* Roxo syntax */
+    --text-color: #d4d4d4;
+    --coffee-color: #ce9178; /* Tom marrom/laranja */
+    --font-mono: 'Fira Code', monospace;
+    --font-sans: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+}
+
+/* --- Header & Nav --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #181818;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--coffee-color);
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Botões --- */
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    border: 2px solid var(--coffee-color);
+    color: var(--coffee-color);
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* --- Hero Section --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 5%;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.code-box {
+    background-color: #000;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: #9cdcfe;
+    margin: 20px 0;
+    border-left: 4px solid var(--accent-color);
+}
+
+.hero-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: -10px 10px 0px var(--primary-color);
+}
+
+/* --- Menu Section --- */
+.menu {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.menu h2 {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: var(--coffee-color);
+}
+
+.menu-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    border: 1px solid #333;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.card-header {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: #6a9955; /* Verde comentário */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: white;
+}
+
+.price {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin: 15px 0;
+    font-family: var(--font-mono);
+}
+
+.card button {
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background-color: #111;
+    border-top: 1px solid #333;
+}
+
+.socials {
+    margin-top: 10px;
+}
+
+.socials a {
+    color: var(--primary-color);
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-img {
+        margin-top: 40px;
+    }
+    
+    .hero-img img {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .code-box {
+        text-align: left;
+    }
+}
